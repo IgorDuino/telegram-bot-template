@@ -21,7 +21,6 @@ dp = Dispatcher(bot)
 async def process_start_command(message: types.Message):
     await message.answer("Hi", reply_markup=types.ReplyKeyboardRemove())
 
-    # get user or create new one
     user = await User.get_or_create(tg_id=message.from_user.id)
     await user.update(username=message.from_user.full_name)
 
@@ -44,19 +43,6 @@ async def init_db():
     await Tortoise.generate_schemas()
 
 
-async def main():
-    await run_async(init_db())
-    await dp.run_async()
-
-"""
-# Create instance by save
-tournament = Tournament(name='New Tournament')
-await tournament.save()
-
-# Or by .create()
-await Tournament.create(name='Another Tournament')
-
-# Now search for a record
-tour = await Tournament.filter(name__contains='Another').first()
-print(tour.name)
-"""
+if __name__ == '__main__':
+    run_async(init_db())
+    executor.start_polling(dp, skip_updates=True)

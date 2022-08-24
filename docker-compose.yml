@@ -4,15 +4,19 @@ services:
     image: postgres:14
     restart: unless-stopped
     env_file:
-      - .env
+      - prod.env
     volumes:
       - ./data/db:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
     restart: unless-stopped
+    links:
+      - db
+    depends_on:
+      - db
     env_file:
-      - .env
+      - prod.env
     volumes:
        - pgadmin:/var/lib/pgadmin
     ports:
@@ -28,4 +32,4 @@ services:
     depends_on:
       - db
     env_file:
-      - .env
+      - prod.env
