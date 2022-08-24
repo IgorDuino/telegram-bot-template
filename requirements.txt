@@ -1,0 +1,5 @@
+python-decouple
+aiogram
+tortoise-orm[psycopg]
+asyncpg
+pydantic
