@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "telegram-bot-template"
+version = "0.1.0"
+description = "Simple telegram bot template"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiogram = "^2.22.1"
+python-decouple = "^3.6"
+tortoise-orm = {extras = ["psycopg"], version = "^0.19.2"}
+asyncpg = "^0.26.0"
+pydantic = "^1.9.2"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
