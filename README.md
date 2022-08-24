@@ -1,1 +1,5 @@
-# Simple telegram bot template using aiogram & tortoise
+# Simple telegram bot template
+
+🏃 Aiogram 
+🐢 Tortoise
+
