@@ -19,10 +19,12 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def process_start_command(message: types.Message):
-    await message.answer("Hi", reply_markup=types.ReplyKeyboardRemove())
+    user = await User.filter(tg_id=message.from_user.id).first()
+    if not user:
+        user = User(tg_id=message.from_user.id, username=message.from_user.username)
+        await user.save()
 
-    user = await User.get_or_create(tg_id=message.from_user.id)
-    await user.update(username=message.from_user.full_name)
+    await message.answer(f"Hi, {user.username}", reply_markup=main_menu())
 
 
 @dp.message_handler(commands=['help'])
@@ -45,4 +47,4 @@ async def init_db():
 
 if __name__ == '__main__':
     run_async(init_db())
-    executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp)
