@@ -1,0 +1,3 @@
+aiogram
+tortoise-orm[psycopg]
+python-decouple
