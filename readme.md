@@ -1,7 +1,7 @@
 # Telegram Bot Template
 
 ### Useful and multifunction bot template, which use aiogram
-> based on https://github.com/rodion-gudz/telegram-bot-template, but in Docker, without pyrogram, with poetry, decouple, last versions and fixed migrations
+> based on https://github.com/rodion-gudz/telegram-bot-template, but Dockerized, without pyrogram, with poetry, bumped up requirements and migrations
 
 ![Telegram](https://img.shields.io/badge/Telegram-blue?style=flat&logo=telegram)
 ![CodeStyle](https://img.shields.io/badge/code%20style-black-black)
@@ -13,10 +13,11 @@
   dialogs
 * ☁️ Webhook and long polling with local Bot API server support
 * 🎨 Beautiful and informative colored logs
-* 🛠 Throttling and db middlewares by default
+* 🛠 Throttling and database middlewares by default
 * 📝 Changing UI commands
 * 👨🏻‍💻 Owner filter
 * ℹ️ Demo usage of dialogs and inline queries
+* 🔥 And much more coming!
 
 ## Usage
 
